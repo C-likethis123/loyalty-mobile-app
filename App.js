@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Home, About, Login, Memberships, PointsTransfer } from './screens'
-const Stack = createStackNavigator();
+
+const Stack = createDrawerNavigator();
 
 export default function App() {
   return (

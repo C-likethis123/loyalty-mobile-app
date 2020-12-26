@@ -1,6 +1,16 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Button, View, Text } from 'react-native';
 
-export default function Home() {
-  return <Text>Home</Text>
+export default function Home({navigation}) {
+  return (
+    <View>
+      <Button 
+        onPress={navigation.toggleDrawer}
+        title="Drawer"
+      />
+      <Text>Points</Text>
+      <Text>News</Text>
+      <Text>Quick Discounts Nearby</Text>
+    </View>
+  )
 }
