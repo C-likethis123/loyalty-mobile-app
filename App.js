@@ -1,29 +1,31 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Home, About, Login, Memberships, PointsTransfer } from './screens'
 
-const Stack = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator 
-        initialRouteName="Home"
-        drawerPosition="right"
-        drawerContentOptions={{
-          activeBackgroundColor: "#748FEF",
-          activeTintColor: "#FFFFFF",
-        }}
-        drawerStyle={{
-          backgroundColor: "#74DBEF",
-        }}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Memberships" component={Memberships} />
-        <Stack.Screen name="PointsTransfer" component={PointsTransfer} />
-      </Stack.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+            tabBarIcon:({ focused, color, size }) => {
+                let iconName;
+                if (route.name == 'Home') {
+                    iconName = focused ? 'ios-home' : 'ios-home-outline';
+                } else if (route.name == 'About') {
+                    iconName=focused ? 'ios-information-circle' : 'ios-information-circle-outline';
+                }
+                return <Ionicons name={iconName} size={size} color={color} />;
+            }
+        })}
+        tabBarOptions={{activeTintColor: 'blue', inactiveTintColor: 'gray'}}
+      >
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="About" component={About} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
