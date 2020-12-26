@@ -1,13 +1,17 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { Appbar } from 'react-native-paper';
-import { StyleSheet, Platform } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 
 export default function About() {
   return (
-    <Appbar.Header style = {styles.appBarCss}>
-     <Appbar.Content title="About" />
-    </Appbar.Header>
+    <View>
+      <Appbar.Header style = {styles.appBarCss}>
+        <Appbar.Content title="About" />
+      </Appbar.Header>
+      <Text>Coffee Logo: <a href="https://www.freepik.com/vectors/logo">Logo vector created by sergey_kandakov - www.freepik.com</a></Text>
+      <Text>Soup image: <a href="https://www.freepik.com/photos/food">Food photo created by azerbaijan_stockers - www.freepik.com</a></Text>
+    </View>
+    
   )
 }
 
