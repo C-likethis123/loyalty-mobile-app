@@ -1,13 +1,15 @@
 import React from 'react';
-import { Button, View, Text } from 'react-native';
-
+import { TouchableOpacity, Image, Button, View, Text } from 'react-native';
+import MenuIcon from '../assets/menu.svg'
 export default function Home({navigation}) {
   return (
     <View>
-      <Button 
-        onPress={navigation.toggleDrawer}
-        title="Drawer"
-      />
+      <TouchableOpacity onPress={navigation.toggleDrawer}>
+        <Image
+          source={MenuIcon}
+          style={{height: 20, width: 20}}
+        />
+      </TouchableOpacity>
       <Text>Points</Text>
       <Text>News</Text>
       <Text>Quick Discounts Nearby</Text>
