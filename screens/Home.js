@@ -1,8 +1,23 @@
 import React from 'react';
-import { TouchableOpacity, Image, Button, View, Text, StyleSheet } from 'react-native';
+import { FlatList, TouchableOpacity, Image, Button, View, Text, StyleSheet } from 'react-native';
 import { Appbar, Card, Paragraph } from 'react-native-paper';
 import IKEA from '../assets/ikea.jpg'
+import {stores} from '../constants/stores'
+
 export default function Home() {
+  const renderCard = ({item}) => (
+    <Card style={styles.storeContainer}>
+      <Card.Cover 
+        source={item.image}
+        resizeMode="cover"
+        style={styles.storeCover} 
+      />
+      <Card.Content>
+        <Paragraph style={styles.storeContent}>{item.name}</Paragraph>
+      </Card.Content>
+    </Card>
+  )
+  const getCardId = (item) => item.id
   return (
     <>
       <Appbar.Header style={styles.appBarCss}>
@@ -17,15 +32,14 @@ export default function Home() {
       </Card>
       <Card>
         <Card.Title title="Quick Discounts Nearby" />
-        <Card style={styles.storeContainer}>
-          <Card.Cover 
-            source={IKEA}
-            resizeMode="cover"
-            style={styles.storeCover} />
-          <Card.Content>
-            <Paragraph style={styles.storeContent}>IKEA</Paragraph>
-          </Card.Content>
-        </Card>
+        <Card.Content>
+          <FlatList
+            horizontal
+            data={stores}
+            renderItem={renderCard}
+            keyExtractor={getCardId}
+          />
+        </Card.Content>
       </Card>
     </>
   );
@@ -41,11 +55,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif',
   },
   storeContainer: {
+    margin: 10,
     border: '1px black solid',
     minHeight: 150,
     width: 178,
-    display: 'flex',
-    flexDirection: 'column',
     justifyContent: 'center',
   },
   storeContent: {
