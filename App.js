@@ -8,7 +8,16 @@ const Stack = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator 
+        initialRouteName="Home"
+        drawerPosition="right"
+        drawerContentOptions={{
+          activeBackgroundColor: "#748FEF",
+          activeTintColor: "#FFFFFF",
+        }}
+        drawerStyle={{
+          backgroundColor: "#74DBEF",
+        }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="About" component={About} />
         <Stack.Screen name="Login" component={Login} />
