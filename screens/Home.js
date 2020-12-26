@@ -55,10 +55,10 @@ const styles = StyleSheet.create({
   },
   storeContainer: {
     margin: 10,
-    border: '1px black solid',
     minHeight: 150,
     width: 178,
     justifyContent: 'center',
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },
   storeContent: {
     textAlign: 'center',
