@@ -6,4 +6,8 @@ export const stores = [{
   name: 'Coffee House',
   image: require('../assets/coffee.jpg'),
   id: 2,
+}, {
+  name: 'Spoon Soup',
+  image: require('../assets/soup.jpg'),
+  id: 3,
 }]
