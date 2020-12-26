@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     minHeight: 150,
     width: 178,
     justifyContent: 'center',
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   },
   storeContent: {
     textAlign: 'center',
