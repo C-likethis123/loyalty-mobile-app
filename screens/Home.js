@@ -26,8 +26,8 @@ export default function Home() {
       </Appbar.Header>
       <Card>
         <Card.Title title="Your Points" />
-        <Card.Content style={styles.points}>
-          150
+        <Card.Content>
+          <Paragraph style={styles.points}>150</Paragraph>
         </Card.Content>
       </Card>
       <Card>
@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
   points: {
     fontSize: 30,
     fontWeight: 600,
-    fontFamily: 'Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif',
   },
   storeContainer: {
     margin: 10,
