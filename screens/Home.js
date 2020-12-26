@@ -1,8 +1,7 @@
 import React from 'react';
 import { FlatList, TouchableOpacity, Image, Button, View, Text, StyleSheet } from 'react-native';
 import { Appbar, Card, Paragraph } from 'react-native-paper';
-import IKEA from '../assets/ikea.jpg'
-import {stores} from '../constants/stores'
+import { stores } from '../constants/stores'
 
 export default function Home() {
   const renderCard = ({item}) => (
