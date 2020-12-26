@@ -1,25 +1,25 @@
 import React from 'react';
-import { FlatList, TouchableOpacity, Image, Button, View, Text, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import { Appbar, Card, Paragraph } from 'react-native-paper';
-import { idExtractor, stores } from '../constants/stores'
+import { idExtractor, stores } from '../constants/stores';
 
 export default function Home() {
-  const renderCard = ({item}) => (
+  const renderCard = ({ item }) => (
     <Card style={styles.storeContainer}>
-      <Card.Cover 
+      <Card.Cover
         source={item.image}
         resizeMode="cover"
-        style={styles.storeCover} 
+        style={styles.storeCover}
       />
       <Card.Content>
         <Paragraph style={styles.storeContent}>{item.name}</Paragraph>
       </Card.Content>
     </Card>
-  )
+  );
   return (
     <>
       <Appbar.Header style={styles.appBarCss}>
-      <Appbar.Content title="Home" />
+        <Appbar.Content title="Home" />
         {/* <Appbar.Action icon="magnify" onPress={() => {}} /> */}
       </Appbar.Header>
       <Card>
@@ -45,7 +45,7 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   appBarCss: {
-    backgroundColor: 'blue'
+    backgroundColor: 'blue',
   },
   points: {
     fontSize: 30,

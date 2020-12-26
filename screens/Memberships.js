@@ -1,6 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Menu, Appbar } from 'react-native-paper';
 import { createStackNavigator } from '@react-navigation/stack';
 import { CardDetails, MembershipList } from './MembershipScreens'
 
@@ -14,12 +12,3 @@ export default function Memberships() {
     </Stack.Navigator>
     )
 }
-
-const styles = StyleSheet.create({
-  appBarCss: {
-    backgroundColor: 'blue'
-  },
-  content: {
-    backgroundColor: "white",
-  }
-});

@@ -2,5 +2,5 @@ import React from 'react';
 import { Text } from 'react-native';
 
 export default function PointsTransfer() {
-  return <Text>PointsTransfer</Text>
+  return <Text>PointsTransfer</Text>;
 }
