@@ -1,15 +1,12 @@
 import React from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import { Menu, Appbar} from 'react-native-paper';
-import { idExtractor, stores } from '../constants/stores'
+import { Menu, Appbar } from 'react-native-paper';
+import { idExtractor, stores } from '../constants/stores';
 
 export default function Memberships() {
-  const renderCard = ({item}) => (
-    <Menu.Item
-      icon="card-text"
-      title={item.name}
-    />
-  )
+  const renderCard = ({ item }) => (
+    <Menu.Item icon="card-text" title={item.name} />
+  );
   return (
     <View style={styles.content}>
       <Appbar.Header style={styles.appBarCss}>
@@ -20,14 +17,15 @@ export default function Memberships() {
         renderItem={renderCard}
         keyExtractor={idExtractor}
       />
-    </View>)
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   appBarCss: {
-    backgroundColor: 'blue'
+    backgroundColor: 'blue',
   },
   content: {
-    backgroundColor: "white",
-  }
+    backgroundColor: 'white',
+  },
 });
