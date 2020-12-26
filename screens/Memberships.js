@@ -11,7 +11,7 @@ export default function Memberships() {
     />
   )
   return (
-    <View>
+    <View style={styles.content}>
       <Appbar.Header style={styles.appBarCss}>
         <Appbar.Content title="Memberships" />
       </Appbar.Header>
@@ -27,4 +27,7 @@ const styles = StyleSheet.create({
   appBarCss: {
     backgroundColor: 'blue'
   },
+  content: {
+    backgroundColor: "white",
+  }
 });
