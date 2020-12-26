@@ -11,3 +11,5 @@ export const stores = [{
   image: require('../assets/soup.jpg'),
   id: 3,
 }]
+
+export const idExtractor = (item) => item.id

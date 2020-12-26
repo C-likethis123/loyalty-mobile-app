@@ -1,6 +1,30 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
+import { Menu, Appbar} from 'react-native-paper';
+import { idExtractor, stores } from '../constants/stores'
 
 export default function Memberships() {
-  return <Text>Memberships</Text>
+  const renderCard = ({item}) => (
+    <Menu.Item
+      icon="card-text"
+      title={item.name}
+    />
+  )
+  return (
+    <View>
+      <Appbar.Header style={styles.appBarCss}>
+        <Appbar.Content title="Memberships" />
+      </Appbar.Header>
+      <FlatList
+        data={stores}
+        renderItem={renderCard}
+        keyExtractor={idExtractor}
+      />
+    </View>)
 }
+
+const styles = StyleSheet.create({
+  appBarCss: {
+    backgroundColor: 'blue'
+  },
+});

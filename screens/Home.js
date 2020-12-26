@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, TouchableOpacity, Image, Button, View, Text, StyleSheet } from 'react-native';
 import { Appbar, Card, Paragraph } from 'react-native-paper';
-import { stores } from '../constants/stores'
+import { idExtractor, stores } from '../constants/stores'
 
 export default function Home() {
   const renderCard = ({item}) => (
@@ -16,7 +16,6 @@ export default function Home() {
       </Card.Content>
     </Card>
   )
-  const getCardId = (item) => item.id
   return (
     <>
       <Appbar.Header style={styles.appBarCss}>
@@ -36,7 +35,7 @@ export default function Home() {
             horizontal
             data={stores}
             renderItem={renderCard}
-            keyExtractor={getCardId}
+            keyExtractor={idExtractor}
           />
         </Card.Content>
       </Card>
