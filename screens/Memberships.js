@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { CardDetails, MembershipList } from './MembershipScreens'
+import { CardDetails, MembershipList } from './MembershipScreens';
 
-const Stack = createStackNavigator()
+const Stack = createStackNavigator();
 
 export default function Memberships() {
   return (
@@ -10,5 +10,5 @@ export default function Memberships() {
       <Stack.Screen name="MembershipList" component={MembershipList} />
       <Stack.Screen name="CardDetails" component={CardDetails} />
     </Stack.Navigator>
-    )
+  );
 }
