@@ -1,26 +1,18 @@
 import React from 'react';
-import { View, FlatList, StyleSheet } from 'react-native';
-import { Menu, Appbar} from 'react-native-paper';
-import { idExtractor, stores } from '../constants/stores'
+import { StyleSheet } from 'react-native';
+import { Menu, Appbar } from 'react-native-paper';
+import { createStackNavigator } from '@react-navigation/stack';
+import { CardDetails, MembershipList } from './MembershipScreens'
+
+const Stack = createStackNavigator()
 
 export default function Memberships() {
-  const renderCard = ({item}) => (
-    <Menu.Item
-      icon="card-text"
-      title={item.name}
-    />
-  )
   return (
-    <View style={styles.content}>
-      <Appbar.Header style={styles.appBarCss}>
-        <Appbar.Content title="Memberships" />
-      </Appbar.Header>
-      <FlatList
-        data={stores}
-        renderItem={renderCard}
-        keyExtractor={idExtractor}
-      />
-    </View>)
+    <Stack.Navigator initialRouteName="MembershipList">
+      <Stack.Screen name="MembershipList" component={MembershipList} />
+      <Stack.Screen name="CardDetails" component={CardDetails} />
+    </Stack.Navigator>
+    )
 }
 
 const styles = StyleSheet.create({
