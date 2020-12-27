@@ -14,13 +14,15 @@ export default function CardDetails({ route }) {
         <View>
           <Image source={CardImage} style={styles.card} />
         </View>
-        <View>
-          <Text>
+        <View style={[styles.container, styles.content]}>
+          <Text>Membership No.</Text>
+          <Text style={styles.text}>
             {membershipNumber}
           </Text>
         </View>
-        <View>
-          <Text>{loyaltyPoints}</Text>
+        <View style={[styles.container, styles.content]}>
+          <Text>Loyalty Points</Text>
+          <Text style={styles.text}>{loyaltyPoints}</Text>
         </View>
       </View>
     </View>)
@@ -38,8 +40,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   card: {
-    height: 200,
-    width: 370,
+    height: 150,
+    width: 270,
     borderRadius: '10px',
+  },
+  container: {
+    border: '1px solid black',
+    height: 100,
+    width: 305,
+    padding: 10,
+    marginTop: 10,
+  },
+  text: {
+    color: '#2925FB',
+    fontFamily: "'Roboto', 'Helvetica Neue'",
+    fontWeight: 800,
+    fontSize: 24,
   }
 });

@@ -8,7 +8,7 @@ export default function MembershipList({navigation}) {
     <Menu.Item
       onPress={() => navigation.navigate('CardDetails', {
         shopName: item.name,
-        membershipNumber: '12345a',
+        membershipNumber: '1234-5678-9123-4567',
         loyaltyPoints: 40,
       })}
       icon="card-text"
