@@ -20,6 +20,9 @@ export default function About() {
           Food photo created by azerbaijan_stockers - www.freepik.com
         </a>
       </Text>
+      <Text>
+      Loyalty cards: <a href='https://www.freepik.com/vectors/logo'>Logo vector created by freepik - www.freepik.com</a>
+      </Text>
     </View>
   );
 }
