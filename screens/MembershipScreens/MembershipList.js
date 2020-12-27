@@ -17,9 +17,9 @@ export default function MembershipList({navigation}) {
   )
   return (
     <View style={styles.content}>
-      <Appbar.Header style={styles.appBarCss}>
+      {/* <Appbar.Header style={styles.appBarCss}>
         <Appbar.Content title="Memberships" />
-      </Appbar.Header>
+      </Appbar.Header> */}
       <FlatList
         data={stores}
         renderItem={renderCard}

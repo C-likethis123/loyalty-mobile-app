@@ -7,9 +7,9 @@ export default function CardDetails({ route }) {
   const { shopName, membershipNumber, loyaltyPoints } = route.params
   return (
     <View style={styles.root}>
-      <Appbar.Header style={styles.appBarCss}>
+      {/* <Appbar.Header style={styles.appBarCss}>
         <Appbar.Content title={shopName} />
-      </Appbar.Header>
+      </Appbar.Header> */}
       <View style={styles.content}>
         <View>
           <Image source={CardImage} style={styles.card} />
