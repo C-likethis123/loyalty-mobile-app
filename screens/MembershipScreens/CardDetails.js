@@ -1,17 +1,18 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { Menu, Appbar} from 'react-native-paper';
-import { idExtractor, stores } from '../../constants/stores'
+import { Image, View, Text, FlatList, StyleSheet } from 'react-native';
+import { Appbar } from 'react-native-paper';
+import CardImage from '../../assets/card.jpg';
 
-export default function CardDetails({shopName, membershipNumber, loyaltyPoints}) {
+export default function CardDetails({ route }) {
+  const { shopName, membershipNumber, loyaltyPoints } = route.params
   return (
-    <View style={styles.content}>
+    <View style={styles.root}>
       <Appbar.Header style={styles.appBarCss}>
         <Appbar.Content title={shopName} />
       </Appbar.Header>
-      <View>
+      <View style={styles.content}>
         <View>
-          <Text>Picture of card</Text>
+          <Image source={CardImage} style={styles.card} />
         </View>
         <View>
           <Text>
@@ -29,7 +30,16 @@ const styles = StyleSheet.create({
   appBarCss: {
     backgroundColor: 'blue'
   },
-  content: {
+  root: {
     backgroundColor: "white",
+  },
+  content: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  card: {
+    height: 200,
+    width: 370,
+    borderRadius: '10px',
   }
 });
